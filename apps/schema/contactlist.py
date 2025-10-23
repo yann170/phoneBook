@@ -1,0 +1,19 @@
+from pydantic import BaseModel
+from typing import List
+from sqlmodel import SQLModel
+from apps.models.models import Contact, ListContact 
+
+
+class contactlist(SQLModel):
+    id: int
+    list_name: str
+    contacts: List[Contact] = []
+
+class contactlistCreate(SQLModel):
+    list_name: str
+
+class contactlistRead(contactlist):
+    pass    
+
+class contactlistUpdate(SQLModel):
+    list_name: str
