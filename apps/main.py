@@ -5,7 +5,7 @@ from fastapi.staticfiles import StaticFiles
 from .config.database import get_engine
 from .core.core import CORSMiddleware,origins
 
-SQLModel.metadata.create_all(engine)
+#SQLModel.metadata.create_all(engine)
 #create_contactlist_db()
 #delete_contactlist_db()
 #delete_all_contactlist()
