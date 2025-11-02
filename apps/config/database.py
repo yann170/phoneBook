@@ -1,5 +1,5 @@
 from sqlmodel import create_engine, SQLModel, Session,select
-from apps.models.models import Contact, ListContact, ContactListLink
+from ..models.models import Contact, ListContact, ContactListLink
 
 
 sqlite_file_name = "dataPhonebook.db"

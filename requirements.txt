@@ -1,4 +1,5 @@
 sqlmodel
-fastapi
+fastapi[standard]
 sqlalchemy
 alembic
+pydantic

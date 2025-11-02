@@ -2,9 +2,9 @@ from fastapi import APIRouter, Depends,HTTPException
 from typing import Annotated 
 from sqlmodel import Session, select
 from typing import List
-from apps.config.database import engine, get_engine
-from apps.models.models import Contact, ListContact
-from apps.schema.contactlist import contactlistRead, contactlistCreate, contactlistUpdate
+from ..config.database import engine, get_engine
+from ..models.models import Contact, ListContact
+from ..schema.contactlist import contactlistRead, contactlistCreate, contactlistUpdate
 
 router = APIRouter()    
 @router.post("/create_listContact/", response_model=contactlistRead)

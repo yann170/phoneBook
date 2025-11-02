@@ -2,8 +2,8 @@ from fastapi import APIRouter, Depends, HTTPException, UploadFile, File
 from fastapi.responses import FileResponse
 from typing import Annotated
 from sqlmodel import Session
-from apps.config.database import get_engine
-from apps.models.models import Contact
+from ..config.database import get_engine
+from ..models.models import Contact
 import uuid
 import os
 
@@ -29,6 +29,7 @@ async def upload_image(id_contact:int ,
         with open(image_location, "wb+") as file_object:
             file_object.write(file.file.read())
         return {"info": f"file '{file.filename}' saved at '{image_location}"}
+    
 
 @router.get("/get_image/{id_contact}")
 async def get_image(id_contact:int ,

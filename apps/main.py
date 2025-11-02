@@ -1,9 +1,9 @@
-from   apps.config.database  import engine, SQLModel,create_contactlist_db,delete_contactlist_db,delete_all_contactlist,update_contactlist_db,create_contact_in_db
+from .config.database  import engine, SQLModel,create_contactlist_db,delete_contactlist_db,delete_all_contactlist,update_contactlist_db,create_contact_in_db
 from fastapi import FastAPI,File
-from apps.routes import contact,image,contactlist
+from .routes import contact,image,contactlist
 from fastapi.staticfiles import StaticFiles
-from apps.config.database import get_engine
-from apps.core.core import CORSMiddleware,origins
+from .config.database import get_engine
+from .core.core import CORSMiddleware,origins
 
 #SQLModel.metadata.create_all(engine)
 #create_contactlist_db()

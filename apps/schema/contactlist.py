@@ -1,7 +1,7 @@
 from pydantic import BaseModel
 from typing import List
 from sqlmodel import SQLModel
-from apps.models.models import Contact, ListContact 
+from ..models.models import Contact, ListContact 
 
 
 class contactlist(SQLModel):
