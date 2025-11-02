@@ -31,8 +31,7 @@ class ContactRead(ContactBase):
     Blocked: bool
 
      
-
-
+     
 class ListContactRead(BaseModel):
     id: int
     list_name: str

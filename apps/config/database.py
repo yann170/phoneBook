@@ -60,6 +60,8 @@ def update_contactlist_db():
         else:
             print("icloud contact list not found")
 
+            
+
 def get_engine():
     with Session(engine) as session:
         yield session    
