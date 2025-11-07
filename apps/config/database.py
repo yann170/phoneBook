@@ -2,7 +2,7 @@ from sqlmodel import create_engine, SQLModel, Session,select
 from ..models.models import Contact, ListContact, ContactListLink
 
 
-sqlite_file_name = "dataPhonebook.db"
+sqlite_file_name = "dataPhone.db"
 sqlite_url = f"sqlite:///{sqlite_file_name}"
 engine = create_engine(sqlite_url, echo=True)
 

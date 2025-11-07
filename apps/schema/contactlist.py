@@ -7,7 +7,7 @@ from ..models.models import Contact, ListContact
 class contactlist(SQLModel):
     id: int
     list_name: str
-    contacts: List[Contact] = []
+   
 
 class contactlistCreate(SQLModel):
     list_name: str

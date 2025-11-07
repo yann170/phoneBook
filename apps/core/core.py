@@ -8,7 +8,7 @@ origins = [
     "https://localhost.tiangolo.com",
     "http://localhost",
     "http://0.0.0.0:8100",
-    "*"
+    "http://0.0.0.0:8000",
 ]
 
 

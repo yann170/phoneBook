@@ -4,7 +4,7 @@ from sqlmodel import Session, select
 from typing import List
 from ..config.database import engine, get_engine
 from ..models.models import Contact, ListContact
-from ..schema.contact import ContactRead, ContactCreate, ContactUpdate, ListContactRead
+from ..schema.contact import ContactRead, ContactCreate, ContactUpdate
 
 
 

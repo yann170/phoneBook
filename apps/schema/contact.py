@@ -25,11 +25,14 @@ class ContactUpdate(ContactBase):
 
    
 
-class ContactRead(ContactBase):
+class ContactRead(SQLModel):
     id: int
-    favorite: bool
-    Blocked: bool
-
+    name: str
+    email: str
+    phone: str
+    address: str
+    image_url : str
+    
      
      
 class ListContactRead(BaseModel):
