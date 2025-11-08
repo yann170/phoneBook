@@ -9,19 +9,21 @@ class ContactBase(SQLModel):
     email: str
     phone: str
     address: str
-    company: str 
-    image_url: str | None = None
+    company: str  
+    image_url: str | None = None 
     listContacts: List[ListContact] = []
+    favorite: bool | None = False 
+    Blocked: bool   | None = False
 
    
 
 class ContactCreate(ContactBase):
-    pass    
+    pass  
     
 
 class ContactUpdate(ContactBase):
-    favorite: bool
-    Blocked: bool
+    pass
+   
 
    
 
@@ -32,6 +34,8 @@ class ContactRead(SQLModel):
     phone: str
     address: str
     image_url : str
+    favorite : bool
+    Blocked : bool
     
      
      

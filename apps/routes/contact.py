@@ -41,7 +41,7 @@ async def read_contact_by_id(id:int, session:Annotated[Session,Depends(get_engin
         raise HTTPException(status_code=404, detail="Contact not found")    
     return db_contact
     
-@router.post("/upgate_Contact/",response_model=ContactRead,)  
+@router.post("/upgate_Contact/",response_model=ContactUpdate)  
 async def update_contact(session:Annotated[Session,Depends(get_engine)],
                          id:int,
                          contact:ContactUpdate):
@@ -103,3 +103,12 @@ async def delete_contact_in_listcontact(id_contact:int,
         return {"message": f"Contact {contact.name} removed from list {list_contact.list_name}"}
 
   
+
+@router.get("/get_all_favorite_contact/", response_model=List[ContactRead])
+async def read_contact_favorite(session:Annotated[Session,Depends(get_engine)]): 
+
+    if not session.exec(select(Contact)).first():
+        raise HTTPException(status_code=404, detail="No favorite contacts found")
+    else:   
+        contacts_favorite = session.exec(select(Contact).where(Contact.favorite==True)).all()
+        return contacts_favorite

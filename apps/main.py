@@ -24,7 +24,7 @@ app.add_middleware(
 async def main():
     return {"message": "Hello World"}
 app.include_router(contact.router,tags=["Contacts"])
-app.mount("/static", StaticFiles(directory="static"), name="static")
+app.mount("/static", StaticFiles(directory="apps/static"), name="static")
 app.include_router(image.router,tags=["Images"])
 app.include_router(contactlist.router,tags=["ContactLists"])
 
