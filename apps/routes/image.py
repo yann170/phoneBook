@@ -42,7 +42,8 @@ async def get_image(id_contact:int ,
     contact_data_image = db_contact.image_url
     if not contact_data_image:
         raise HTTPException(status_code=404, detail="Image not found") 
-    if os.path.exists(contact_data_image):
-        return FileResponse(contact_data_image)
+    image_url = f"apps/{contact_data_image}"
+    if os.path.exists(image_url):
+        return FileResponse(image_url)
     else:
         raise HTTPException(status_code=404, detail="Image file does not exist")
