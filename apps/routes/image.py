@@ -19,16 +19,17 @@ async def upload_image(id_contact:int ,
         raise HTTPException(status_code=404, detail="Contact not found")
     contact_data_image = db_contact.image_url
     if contact_data_image:
-        image_location = f"static/{uuid_image}.jpg"
+        image_location = f"apps/static/{uuid_image}.jpg"
+        image_save = f"static/{uuid_image}.jpg"
         if os.path.exists(contact_data_image):
             os.remove(contact_data_image)
-        db_contact.image_url = image_location          
+        db_contact.image_url = image_save         
         session.add(db_contact)
         session.commit()
         session.refresh(db_contact)
         with open(image_location, "wb+") as file_object:
             file_object.write(file.file.read())
-        return {"info": f"file '{file.filename}' saved at '{image_location}"}
+        return {"info": f"file '{file.filename}' saved at '{image_save}"}
     
 
 @router.get("/get_image/{id_contact}")
